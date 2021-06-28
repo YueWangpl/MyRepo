@@ -114,14 +114,14 @@ Next, you should implement a recursive ray tracer for mirror reflections. The si
 These implementation notes are contributed by Fall 2012 student KOlegA.  They are not "official course policy", but are likely to be helpful to you in writing your own raytracer.  
 
 0. Own classes for math or glm (or other lib)
-Of course with library functions you can implement the assignment faster and maybe they work faster, but writing your own classes (Vector, Normal, Point, Matrix, Color, ..) gives more flexibility and makes the code easier for understanding. Besides, it's not hard to implement them, and they can be faster because they don't have to be so general. For example in multiplying Matrix4x4 by Vector3 you need to consider only matrix3x3. The only complicated thing to implement is Matrix4x4 inversion, but we don't need that for this assignment. By multiplying inverted transform matrices in reverse order, we can obtain the inverted matrix. (That is, simply invert or undo each transformation, but in reverse order: the last transform applied is the first transform inverted or undone).  .  Of course, you still need to invert the basic transforms like , but inverting simple translation or rotation is straightforward.  
+Of course with library functions you can implement the assignment faster and maybe they work faster, but writing your own classes (Vector, Normal, Point, Matrix, Color, ..) gives more flexibility and makes the code easier for understanding. Besides, it's not hard to implement them, and they can be faster because they don't have to be so general. For example in multiplying Matrix4x4 by Vector3 you need to consider only matrix3x3. The only complicated thing to implement is Matrix4x4 inversion, but we don't need that for this assignment. By multiplying inverted transform matrices in reverse order, we can obtain the inverted matrix. (That is, simply invert or undo each transformation, but in reverse order: the last transform applied is the first transform inverted or undone).  $(ABC)^{-1} = C^{-1}B^{-1}A^{-1}$.  Of course, you still need to invert the basic transforms like A^{-1}, but inverting simple translation or rotation is straightforward.  
 
 1. scene4-ambient and scene4-emission
 If transforms and intersections are implemented correctly, the image should look like the image from the grader. At this step you can skip implementing the shader and shadows, and just set color equal to ambient + emission.
 
 Image is smaller then it should be: Probably you are calculating fovx incorrectly. Should be
 
-.
+$$tan(fovx/2) = tan(fovy/2) width/height$$.
 
 Or the camera ray is not through the center of the pixel (it may be through integers 0, 1, 2 instead of half-integers 0.5, 1.5, 2.5).
 
