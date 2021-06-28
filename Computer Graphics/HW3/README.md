@@ -102,8 +102,8 @@ If you are testing only the ray-sphere intersection test, it is much simpler to 
 Next, you should implement transformations, allowing the user to specify transformed geometry. You might want to try the third test scene (the table with ellipses and spheres). Again, shading is not yet important, but you should be sure the core ray-surface intersection tests for geometry are debugged.
 
 #### Lighting and Shadows
-Next, you should implement shading. For this, simply implement the similar shading model as in homework 2. In particular, the color at each point is given by
-$$I = A + E + sum_i V_i L_i/(c_0+c_1 r + c_2 r)(D max(N \dot L, 0) + S max (N \dot H, 0)^S)  
+Next, you should implement shading. For this, simply implement the similar shading model as in homework 2. In particular, the color at each point is given by  
+$$I = A + E + sum_i V_i L_i/(c_0+c_1 r + c_2 r)(D max(N \dot L, 0) + S max (N \dot H, 0)^S)$$  
 where $I$ is the final intensity, $A$ is the ambient term, $E$ is the self-emission, and the diffuse D and specular S are summed over all lights $i$ with intensity $L_i$. $N$ is the surface normal, $L$ is the direction to the light,  $H$ is the half-angle, and $s$ is the shininess. For ray tracers, there is an additional term $V_i$ which is the (binary) visibility to the light, corresponding to shadows. You should cast a shadow ray to all lights at the intersection point to determine if they are visible (determine $V_i$). If visible, we simply compute the diffuse contribution as well as the specular contribution. We also include an attenuation model, new from homework 2, corresponding to traditional OpenGL (the attenuation model applies only to point lights, not directional lights). c0, c1, c2 are the constant, linear and quadratic attenuation terms, while $r$ is the distance to the light. Physical point lights have (c0, c1, c2) = (0,0,1) while the default (no attenuation) is (c0, c1, c2) = (1,0,0).
 
 ####Recursive Ray Tracing
