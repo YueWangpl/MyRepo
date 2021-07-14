@@ -32,7 +32,7 @@ void Transform::left(float degrees, vec3& eye, vec3& up) {
 // Transforms the camera up around the "crystal ball" interface
 void Transform::up(float degrees, vec3& eye, vec3& up) {
     // YOUR CODE FOR HW1 HERE 
-	vec3 axis = glm::cross(eye, up);
+	vec3 axis = vec3(1, 0, 0);  //glm::cross(eye, up);
 	axis = glm::normalize(axis);
 	up = Transform::rotate(degrees, axis) * up;
 	eye = Transform::rotate(degrees, axis) * eye;
