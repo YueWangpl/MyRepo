@@ -32,7 +32,7 @@ void Transform::up(float degrees, vec3& eye, vec3& up)
 {
     // YOUR CODE FOR HW2 HERE 
     // Likely the same as in HW 1.  
-    vec3 axis = glm::cross(eye, up);
+    vec3 axis = vec3(1, 0, 0); // glm::cross(eye, up);
     up = glm::normalize(Transform::rotate(degrees, axis) * up);
     eye = Transform::rotate(degrees, axis) * eye;
 }
