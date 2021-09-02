@@ -1,3 +1,5 @@
+[Lecture content](https://github.com/mizunohadouken/CSE-167-Homework-3/blob/03a363bd8fb21501da24a26b75ceff5952ca8455/scribe-lecture1.pdf)
+
 # Overview
 In general, you should implement a raytracer. The raytracer can be run on the command line with a single argument, that is an input file. All parameters are contained in the input file, whose format is specified on the next page. Your raytracer will parse the input file, reading in geometry, materials, lights, transforms etc. It will then raytrace the scene displaying an image. The file format is rather similar to that in assignment 2, and so you should already have a handle on some logistical issues like how to parse it and so forth. In fact, the assignment is in some sense simpler than homework 2, since you do not need to implement any user interaction.
 
