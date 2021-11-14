@@ -1,4 +1,7 @@
-# MyRepo - Personal Small Projects
+# MyRepo
+
+## SVD and Eigenfaces
+DATA 1010 final project - [Blog Post](https://nextjournal.com/yuewangpl/svd-and-eigenfaces#svd-and-eigenfaces)
 
 ## GANs
 [Generative Models](https://github.com/YueWangpl/MyRepo/tree/master/GAN)
